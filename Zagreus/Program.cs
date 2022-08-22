@@ -20,7 +20,17 @@ namespace Zagreus
             string[] myChars = Environment.GetCommandLineArgs();
             Console.WriteLine(string.Join(", ", myChars));
 
+            ReturnChar();
+
             Console.ReadLine(); 
+        }
+
+        private static void ReturnChar()
+        {
+            string name = "";
+            Console.Write("Who is your favorite character? ");
+            name = Console.ReadLine();
+            Console.WriteLine("Your favorite character is {0}", name);
         }
     }
 }
