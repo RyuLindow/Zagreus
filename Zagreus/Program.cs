@@ -11,11 +11,10 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            BigInteger bigNum = BigInteger.Parse("10021995");
-            Console.WriteLine("7 days and 15 years after my b day something happened {0}", bigNum + 07000015);
-
-
-
+            Console.WriteLine("Currency : {0:c}", 161.7); 
+            Console.WriteLine("Pad with 0s : {0:d4}", 162); 
+            Console.WriteLine("3 decimals : {0:f3}", 162.70101); 
+            Console.WriteLine("Commas : {0:n2}", 1162 ); 
 
             Console.ReadLine();
         }
