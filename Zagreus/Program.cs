@@ -12,48 +12,29 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            int[] bDayNums = new int[3];
+            int[] rndNmbrs = { 1, 0, 0, 2, 9, 5 };
 
-            bDayNums[0] = 10;
-            bDayNums[1] = 02;
-            bDayNums[2] = 95;
-            
-            Console.WriteLine("bDayNums 0 : {0}",
-                bDayNums[2]);
+            Array.Sort(rndNmbrs);
 
-            string[] siblings = { "Zagreus", "Thanatos", "Hypnos" };
+            Array.Reverse(rndNmbrs);
 
-            var furies = new[] { "Megaera", "Alecto", "Tisiphone" };
+            rndNmbrs.SetValue(7, 0);
 
-            object[] godBrothers = { "Hades", "Zeus", "Poseidon", "99", "171.6" };
+            Console.WriteLine("1 at Index : {0}",
+                Array.IndexOf(rndNmbrs, 1));
 
-            Console.WriteLine("godBrothers 0: {0}",
-                godBrothers[4].GetType());
 
-            Console.WriteLine("Array size: {0}",
-                godBrothers.Length);
+            PrintArray(rndNmbrs, "ForEach");
 
-            for (int i = 0; i < godBrothers.Length; i++)
+
+        }
+
+        static void PrintArray(int[] intArray, string msg)
+        {
+            foreach (int n in intArray)
             {
-                Console.WriteLine("Array {0} : Value : {1}",
-                    i, godBrothers[i]);
+                Console.WriteLine( "{0} : {1} ", msg, n);
             }
-
-            string[,] notableCharNames = new string[2, 2] { { "Theseus", "Asterius" }, { "Achilles", "Patroclus" } };
-
-            Console.WriteLine("Notable character names : {0}",
-                notableCharNames.GetValue(0,1));
-
-            for (int i = 0; i < notableCharNames.GetLength(0); i++)
-            {
-                for (int h = 0; h < notableCharNames.GetLength(1); h++)
-                {
-                    Console.Write("Notable character name : {0} \n",
-                        notableCharNames[i, h]);
-                }
-                Console.WriteLine();
-            }
-
 
             Console.ReadLine();
         }
