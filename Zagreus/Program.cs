@@ -12,44 +12,38 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            int[] rndNmbrs = { 1, 0, 0, 2, 9, 5 };
+            StringBuilder sb1 = new StringBuilder("The voice acting is great!");
 
-            Array.Sort(rndNmbrs);
+            StringBuilder sb2 = new StringBuilder("And so is the music :)", 256);
 
-            Array.Reverse(rndNmbrs);
+            Console.WriteLine("Capacity : {0}", sb1.Capacity);
+            Console.WriteLine("Capacity : {0}", sb2.Capacity);
 
-            rndNmbrs.SetValue(7, 0);
+            Console.WriteLine("Length : {0}", sb1.Length);
+            Console.WriteLine("Length : {0}", sb2.Length);
 
-            Console.WriteLine("1 at Index : {0}",
-                Array.IndexOf(rndNmbrs, 1));
+            sb2.AppendLine("\r");
 
-            PrintArray(rndNmbrs, "ForEach");
+            CultureInfo enUS = CultureInfo.CreateSpecificCulture("en-US");
 
-            int[] srcArray = { 10, 02, 95 };
-            int[] destArray = new int[2];
-            int startIndx = 0;
-            int length = 2;
+            string bestChar = "Megaera";
+            sb2.AppendFormat(enUS, "Best character : {0}",
+                bestChar);
+            Console.WriteLine(sb2.ToString());
 
-            Array.Copy(srcArray, startIndx, destArray, startIndx, length);
+            sb2.Replace("music", "art style");
+            Console.WriteLine(sb2.ToString());
 
-            PrintArray(destArray, "Copy");
+            sb2.Clear();
 
-            Array nthrArray = Array.CreateInstance(typeof
-                (int), 10);
+            sb2.Append("Transistor was also a great game");
+            Console.WriteLine(sb1.Equals(sb2));
 
-            srcArray.CopyTo(nthrArray, 5);
+            sb2.Insert(32, " : Amazing studio : Supergiant Games");
+            Console.WriteLine(sb2.ToString());
 
-            foreach (int i in nthrArray)
-            {
-                Console.WriteLine("CopyTo : {0}", i);
-            }
-
-            int[] numArray = { 10, 17, 06 };
-
-            Console.WriteLine("> 10 : {0}", Array.Find(numArray, grtrThn10));
-
-
-
+            sb2.Remove(0, 1);
+            Console.WriteLine(sb2.ToString());
 
             Console.ReadLine();
         }
