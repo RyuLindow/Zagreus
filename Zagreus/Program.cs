@@ -12,11 +12,9 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            long num1 = 1234;
-            int num2 = (int)num1;
-
-            Console.WriteLine("Original : {0}, Cast : {1}", num1.GetType(), num2.GetType());
-
+            
+            Relation Operators : > < => <= == !=
+            Logical Operators : &&(and) ||(or) !(not)
 
 
             Console.ReadLine();
