@@ -13,39 +13,48 @@ namespace Zagreus
         static void Main(string[] args)
         {
 
-            int age = 12;
+            int age = 1;
 
-            if ((age >= 26) && (age <= 43))
+            bool millenial = age >= 18 ?/*then*/ true :/*else*/ false;
+
+            switch (age)
             {
-                Console.WriteLine("Millenial");
+                case 12:
+                    Console.WriteLine("Gen of watching mobile ads");
+                    break;
+
+                case 25:
+                    Console.WriteLine("not sure if zoomer or not");
+                    break;
+
+                case 27:
+                    Console.WriteLine("Millenial");
+                    break;
+
+                default:
+                    Console.WriteLine("Tough luck");
+
+                    goto Ageless;
             }
-            else if ((age > 43) && (age <= 59))
+        Ageless:
+            Console.WriteLine("Dead");
+
+            string name1 = "Darek";
+            string name2 = "Laura";
+            string name3 = "Mati";
+
+            if(name1.Equals(name3, 
+                StringComparison.Ordinal))
             {
-                Console.WriteLine("Gen X");
-            }
-            else if ((age > 59) && (age <= 77))
-            {
-                Console.WriteLine("Boomer");
+                Console.WriteLine("Same name");
             }
             else
             {
-                Console.WriteLine("Dead");
+                Console.WriteLine("Not same");
+
             }
-
-
-            if ((age < 10) || (age < 13))
-            {
-                Console.WriteLine("Robal");
-            }
-
-            Console.WriteLine("!true = " + (!true));
-
-
-
-
 
             Console.ReadLine();
         }
-
     }
 }
