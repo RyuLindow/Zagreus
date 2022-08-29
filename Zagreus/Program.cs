@@ -12,47 +12,26 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
+            int i = 1;
 
-            int age = 1;
-
-            bool millenial = age >= 18 ?/*then*/ true :/*else*/ false;
-
-            switch (age)
+            while(i <= 10)
             {
-                case 12:
-                    Console.WriteLine("Gen of watching mobile ads");
-                    break;
+                if(i % 2 == 0)
+                {
+                    i++;
+                    continue;
+                }
 
-                case 25:
-                    Console.WriteLine("not sure if zoomer or not");
-                    break;
+                if (i == 9) break;
 
-                case 27:
-                    Console.WriteLine("Millenial");
-                    break;
-
-                default:
-                    Console.WriteLine("Tough luck");
-
-                    goto Ageless;
+                Console.WriteLine(i);
+                i++;
             }
-        Ageless:
-            Console.WriteLine("Dead");
 
-            string name1 = "Darek";
-            string name2 = "Laura";
-            string name3 = "Mati";
 
-            if(name1.Equals(name3, 
-                StringComparison.Ordinal))
-            {
-                Console.WriteLine("Same name");
-            }
-            else
-            {
-                Console.WriteLine("Not same");
 
-            }
+
+
 
             Console.ReadLine();
         }
