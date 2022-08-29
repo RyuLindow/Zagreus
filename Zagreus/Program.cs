@@ -12,21 +12,15 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            int i = 1;
+            Random nmbr = new Random();
+            int scrtNmbr = nmbr.Next(1, 11);
+            int nmbrGuessed = 0;
 
-            while(i <= 10)
+            do
             {
-                if(i % 2 == 0)
-                {
-                    i++;
-                    continue;
-                }
-
-                if (i == 9) break;
-
-                Console.WriteLine(i);
-                i++;
-            }
+                Console.WriteLine("Enter a nmbr between 1 and 10 : ");
+                nmbrGuessed = Convert.ToInt32(Console.ReadLine());
+            } while (scrtNmbr != nmbrGuessed);
 
 
 
