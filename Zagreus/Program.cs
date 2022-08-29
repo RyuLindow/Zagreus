@@ -9,25 +9,50 @@ using System.Globalization;
 namespace Zagreus
 {
     internal class Program
-    {
+    {   
         static void Main(string[] args)
         {
-            Random nmbr = new Random();
-            int scrtNmbr = nmbr.Next(1, 11);
-            int nmbrGuessed = 0;
+            double num1 = 5;
+            double num2 = 0;
 
-            do
+            try
             {
-                Console.WriteLine("Enter a nmbr between 1 and 10 : ");
-                nmbrGuessed = Convert.ToInt32(Console.ReadLine());
-            } while (scrtNmbr != nmbrGuessed);
+                Console.WriteLine("5 / 0 = {0}",
+                    Divide(num1, num2));
+            }
 
+            catch (DivideByZeroException ex)
+            {
+                Console.WriteLine("Cannot divide by zero");
 
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+            }
 
+            catch (Exception ex)
+            {
+                Console.WriteLine("Vague exception msg");
 
+                Console.WriteLine(ex.GetType().Name);
+                Console.WriteLine(ex.Message);
+            }
+
+            finally
+            {
+                Console.WriteLine("Cleaning up");
+            }
 
 
             Console.ReadLine();
+        }
+
+        static double Divide(double x, double y)
+        {
+            if (x == y)
+            { 
+                throw new System.DivideByZeroException();
+            }
+            return x / y;
         }
     }
 }
