@@ -12,47 +12,27 @@ namespace Zagreus
     {   
         static void Main(string[] args)
         {
-            double num1 = 5;
-            double num2 = 0;
+            double x = 5;
+            double y = 4;
 
-            try
-            {
-                Console.WriteLine("5 / 0 = {0}",
-                    Divide(num1, num2));
-            }
+            Console.WriteLine("5 + 4 = {0}",
+                GetSum(x, y));
 
-            catch (DivideByZeroException ex)
-            {
-                Console.WriteLine("Cannot divide by zero");
-
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
-            }
-
-            catch (Exception ex)
-            {
-                Console.WriteLine("Vague exception msg");
-
-                Console.WriteLine(ex.GetType().Name);
-                Console.WriteLine(ex.Message);
-            }
-
-            finally
-            {
-                Console.WriteLine("Cleaning up");
-            }
+            Console.WriteLine("New values for x {0}", x);
 
 
             Console.ReadLine();
         }
 
-        static double Divide(double x, double y)
+        static double GetSum(double x = 1, double y = 1)
         {
-            if (x == y)
-            { 
-                throw new System.DivideByZeroException();
-            }
-            return x / y;
+            double tempVrbl = x;
+            x = y;
+            y = tempVrbl;
+
+            return x + y;
         }
+
+
     }
 }
