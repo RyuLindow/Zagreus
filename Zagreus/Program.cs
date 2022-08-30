@@ -12,30 +12,27 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("5.4 + 4.5 = {0}",
-                GetSum(5.0, 4.5));
+            furies fury1 = furies.Megaera;
+            furies fury2 = furies.Alecto;
+            furies fury3 = furies.Tisiphone;
 
-            Console.WriteLine("5 + 4 = {0}",
-                GetSum(5, 4));
+            SlainFury(fury2);
 
-            Console.WriteLine("5 + 4 = {0}",
-                GetSum("5", "4"));
 
             Console.ReadLine();
         }
         
-        static double GetSum(double x = 1, double y = 1)
+        enum furies :  byte
         {
-            return x + y;
+            Megaera = 1,
+            Alecto,
+            Tisiphone
         }
 
-        static double GetSum(string x = "1", string y = "1")
+        static void SlainFury(furies cc)
         {
-
-            double dblX = Convert.ToDouble(x);
-            double dblY = Convert.ToDouble(y);
-            return dblX + dblY;
+            Console.WriteLine("The fury{1} named {0} was slain by Zagreus",
+                cc, (int)cc);
         }
-
     }
 }
