@@ -9,30 +9,25 @@ using System.Globalization;
 namespace Zagreus
 {
     internal class Program
-    {   
+    {
         static void Main(string[] args)
         {
-            double x = 5;
-            double y = 4;
+            int solution;
 
-            Console.WriteLine("5 + 4 = {0}",
-                GetSum(x, y));
+            DoubleIt(15, out solution);
 
-            Console.WriteLine("New values for x {0}", x);
+            Console.WriteLine("15 * 2 = {0}", solution);
+
+
 
 
             Console.ReadLine();
         }
 
-        static double GetSum(double x = 1, double y = 1)
+        static void DoubleIt(int x, out int solution)
         {
-            double tempVrbl = x;
-            x = y;
-            y = tempVrbl;
-
-            return x + y;
+            solution = x *2;
         }
-
 
     }
 }
