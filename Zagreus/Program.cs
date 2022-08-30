@@ -12,26 +12,16 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("1 + 2 + 3 = {0}",
-                GetSumMore(1,2,3));
-
-
-
-
-
+            PrintInfo(location: "Shade", name: "Eurydice");
 
 
             Console.ReadLine();
         }
         
-        static double GetSumMore(params double[] nums)
+        static void PrintInfo(string name, string location)
         {
-            double sum = 0;
-            foreach (int i in nums)
-            {
-                sum += i;
-            }
-            return sum;
+            Console.WriteLine("{0} lives in the {1}",
+                name, location);
         }
     }
 }
