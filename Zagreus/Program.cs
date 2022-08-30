@@ -12,24 +12,26 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            int num1 = 10;
-            int num2 = 20;
+            Console.WriteLine("1 + 2 + 3 = {0}",
+                GetSumMore(1,2,3));
 
-            Console.WriteLine("Before swap num1 is : {0} \nnum2 is : {1}", num1, num2);
 
-            Swap(ref num1, ref num2);
 
-            Console.WriteLine("After swap num1 is : {0} \nnum2 is : {1}", num1, num2);
+
+
 
 
             Console.ReadLine();
         }
         
-        public static void Swap(ref int num1, ref int num2)
+        static double GetSumMore(params double[] nums)
         {
-            int temp = num1;
-            num1 = num2;
-            num2 = temp;
+            double sum = 0;
+            foreach (int i in nums)
+            {
+                sum += i;
+            }
+            return sum;
         }
     }
 }
