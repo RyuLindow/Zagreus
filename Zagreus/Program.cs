@@ -12,22 +12,24 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            int solution;
+            int num1 = 10;
+            int num2 = 20;
 
-            DoubleIt(15, out solution);
+            Console.WriteLine("Before swap num1 is : {0} \nnum2 is : {1}", num1, num2);
 
-            Console.WriteLine("15 * 2 = {0}", solution);
+            Swap(ref num1, ref num2);
 
-
+            Console.WriteLine("After swap num1 is : {0} \nnum2 is : {1}", num1, num2);
 
 
             Console.ReadLine();
         }
-
-        static void DoubleIt(int x, out int solution)
+        
+        public static void Swap(ref int num1, ref int num2)
         {
-            solution = x *2;
+            int temp = num1;
+            num1 = num2;
+            num2 = temp;
         }
-
     }
 }
