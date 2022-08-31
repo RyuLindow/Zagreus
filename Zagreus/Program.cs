@@ -12,27 +12,45 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            furies fury1 = furies.Megaera;
-            furies fury2 = furies.Alecto;
-            furies fury3 = furies.Tisiphone;
+            InternalArms Varatha;
+            Varatha.damage = 9;
+            Varatha.speed = 5;
+            Console.WriteLine("Rank score of Varatha : {0}", Varatha.RankScore());
 
-            SlainFury(fury2);
+
+            InternalArms Stygius = new InternalArms(4, 10);
+
+            Console.WriteLine("Rank score of Stygius : {0}", Stygius.RankScore());
+
+            Varatha = Stygius;
+            Stygius.damage = 5;
+
+            Console.WriteLine("Rank score of Stygius's dmg : {0}", Stygius.damage);
 
 
             Console.ReadLine();
         }
-        
-        enum furies :  byte
+
+        struct InternalArms
         {
-            Megaera = 1,
-            Alecto,
-            Tisiphone
+            public double damage;
+            public double speed;
+
+            public InternalArms(double d,
+                double s)
+            {
+                damage = d;
+                speed = s;
+            }
+
+            public double RankScore()
+            {
+                return damage * speed;
+            }
+
+
         }
 
-        static void SlainFury(furies cc)
-        {
-            Console.WriteLine("The fury{1} named {0} was slain by Zagreus",
-                cc, (int)cc);
-        }
+
     }
 }

@@ -6,3 +6,11 @@ C:\Users\Umbraco\Desktop\cHash\Zagreus\Zagreus\obj\Debug\Zagreus.csproj.Suggeste
 C:\Users\Umbraco\Desktop\cHash\Zagreus\Zagreus\obj\Debug\Zagreus.csproj.CoreCompileInputs.cache
 C:\Users\Umbraco\Desktop\cHash\Zagreus\Zagreus\obj\Debug\Zagreus.exe
 C:\Users\Umbraco\Desktop\cHash\Zagreus\Zagreus\obj\Debug\Zagreus.pdb
+C:\Users\Umbraco\Desktop\Zagreus\Zagreus\bin\Debug\Zagreus.exe.config
+C:\Users\Umbraco\Desktop\Zagreus\Zagreus\bin\Debug\Zagreus.exe
+C:\Users\Umbraco\Desktop\Zagreus\Zagreus\bin\Debug\Zagreus.pdb
+C:\Users\Umbraco\Desktop\Zagreus\Zagreus\obj\Debug\Zagreus.csproj.AssemblyReference.cache
+C:\Users\Umbraco\Desktop\Zagreus\Zagreus\obj\Debug\Zagreus.csproj.SuggestedBindingRedirects.cache
+C:\Users\Umbraco\Desktop\Zagreus\Zagreus\obj\Debug\Zagreus.csproj.CoreCompileInputs.cache
+C:\Users\Umbraco\Desktop\Zagreus\Zagreus\obj\Debug\Zagreus.exe
+C:\Users\Umbraco\Desktop\Zagreus\Zagreus\obj\Debug\Zagreus.pdb
