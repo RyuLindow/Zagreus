@@ -12,18 +12,7 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            God Zagreus = new God()
-            {
-                name = "Zagreus",
-                title = "Prince of the Underworld",
-                affiliation = "House of Hades"
-            };
-
-            Zagreus.GetTitle();
-
-            Console.WriteLine("{0} is called the {1} and he's a part of the {2}\nThere is {3} god",
-                Zagreus.name, Zagreus.title, Zagreus.affiliation, God.GetNumOfGods());
-
+            Console.WriteLine("Zagreus uses weapons with a score of {0}", CalculateWeaponScore.GetScores("Godkiller"));
 
 
             Console.ReadLine();
