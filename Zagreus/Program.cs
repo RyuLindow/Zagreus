@@ -12,7 +12,18 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Zagreus uses weapons with a score of {0}", CalculateWeaponScore.GetScores("Godkiller"));
+            int? WeaponScore = null;
+
+            if(WeaponScore == null)
+            {
+                Console.WriteLine("Score is null");
+            }
+
+            if (!WeaponScore.HasValue)
+            {
+                Console.WriteLine("Score is null");
+            }
+
 
 
             Console.ReadLine();
