@@ -12,18 +12,26 @@ namespace Zagreus
     {
         static void Main(string[] args)
         {
-            int? WeaponScore = null;
+            God Nyx = new God();
 
-            if(WeaponScore == null)
-            {
-                Console.WriteLine("Score is null");
-            }
+            Nyx.SetName("Nyx");
+            Nyx.Domain = "Night"; 
 
-            if (!WeaponScore.HasValue)
-            {
-                Console.WriteLine("Score is null");
-            }
+            Console.WriteLine("{0}'s domain is the {1}",
+                Nyx.GetName(), Nyx.Domain);
 
+            Nyx.Parent = "Chaos";
+
+            Console.WriteLine("{0}'s parent is {1}",
+                Nyx.GetName(), Nyx.Parent);
+
+            Console.WriteLine("{0} has {1} children",
+                Nyx.Parent, Nyx.godCount);
+
+            God Charon = new God("Charon", "Styx");
+
+            Console.WriteLine("There are {0} gods",
+                God.NumOfDomains);
 
 
             Console.ReadLine();

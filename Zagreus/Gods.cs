@@ -1,43 +1,84 @@
 ﻿using System;
+using System.Linq;
 
 namespace Zagreus
 {
-    internal class God
+    class God
     {
-        public string name;
-        public string title;
-        public string affiliation;
+        private string name;
+        private string domain;
+
+        public const string AFFILIATION = "Mount Olympus";
+
+        public readonly int godCount;
+
+        public void MyDomain()
+        {
+            Console.WriteLine("{0}'s domain is {1}",
+                name, domain);
+        }
 
         public God()
+        :this("Nameless", "No domain") { }
+
+        public God(string name)
+        :this(name, "Nameless") { }
+
+        public God(string name, string domain) 
         {
-            name = "Nameless god";
-            title = "of xxx";
-            affiliation = "has no friends :(";
-            numOfGods++;
+            SetName(name);
+            Domain = domain;
+
+            NumOfDomains = 1;
+
+            Random rnd = new Random();
+            godCount = rnd.Next(1, 2147483640);
         }
 
-        public God(string name = "Nameless god",
-            string title = "titleless",
-            string affiliation = "has no friends :(")
+        public void SetName(string name)
         {
-            this.name = name;
-            this.title = title;
-            this.affiliation = affiliation;
-            numOfGods++;
+            if (!name.Any(char.IsDigit))
+            {
+                this.name = name;
+            } else
+            {
+                this.name = "Nameless";
+                Console.WriteLine("A name can't have numbers in it...");
+            }
         }
 
-        public void GetTitle()
+        public string GetName()
         {
-            Console.WriteLine("{0} is called the {1}",
-                name, title);
+            return name;
         }
 
-        static int numOfGods = 0;
-
-        public static int GetNumOfGods()
+        public string Domain
         {
-            return numOfGods;
+            get { return domain; }
+            set
+            {
+                if(value.Length > 27)
+                {
+                    domain = "No domain";
+                    Console.WriteLine("This domain doesn't exist");
+                }
+
+                domain = value;
+            }
         }
 
+        public string Parent
+        {
+            get;
+            set;
+        } = "No ruler";
+
+        public static int numOfDomains = 0;
+
+        public static int NumOfDomains
+        {
+            get { return numOfDomains; }
+            set { numOfDomains += value; }
+        }
     }
 }
