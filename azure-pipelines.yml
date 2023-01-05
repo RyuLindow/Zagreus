@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: 'windows-latest'
+  name: 'Lindev Agent Pool'
 
 variables:
   solution: '**/*.sln'
